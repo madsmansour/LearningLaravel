@@ -19,10 +19,14 @@ Route::get('/contact', function () {
     $contacts = [
         'Number: +45 12 34 56 78',
         'Mail: test@laravel.com',
-        'Facebook: www.facebook.com/test'
+        'Facebook: www.facebook.com/test',
+        'blabla'
     ];
 
 
-    return view('contact',['contacts' => $contacts]);
+    return view('contact',[
+        'contacts' => $contacts,
+        'title' => request('title')
+    ]);
 
 });
