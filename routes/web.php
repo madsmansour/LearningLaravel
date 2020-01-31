@@ -11,25 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/contact', function () {
-    $contacts = [
-        'Number: +45 12 34 56 78',
-        'Mail: test@laravel.com',
-        'Facebook: www.facebook.com/test',
-        'blabla'
-    ];
+Route::get('/', 'PagesController@home');
 
+Route::get('/contact', 'PagesController@contact');
 
-    return view('contact',[
-        'contacts' => $contacts,
-        'title' => request('title')
-    ]);
-
-});
 
 Auth::routes();
 
